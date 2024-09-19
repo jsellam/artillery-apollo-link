@@ -26,7 +26,7 @@ export function createArtilleryApolloLink({
   ];
 
   return new ApolloLink((operation, forward) => {
-    const { query, variables } = operation;
+    const { query, variables, operationName } = operation;
 
     if (lastQueryTime > 0) {
       const diff = Date.now() - lastQueryTime;
@@ -39,6 +39,7 @@ export function createArtilleryApolloLink({
 
     flowList.push({
       post: {
+        name: operationName || "Unnamed",
         url,
         headers: headers ? { ...headers } : undefined,
         json: {
