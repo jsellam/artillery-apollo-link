@@ -1,6 +1,6 @@
 {
   "name": "artillery-apollo-link",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Apollo link for Artillery yaml generation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
