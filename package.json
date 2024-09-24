@@ -9,8 +9,21 @@
     "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Jérémie Sellam",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsellam/artillery-apollo-link.git"
+  },
+  "keywords": [
+    "artillery",
+    "@apollo/client",
+    "apollo",
+    "link",
+    "graphql",
+    "gql",
+    "yaml"
+  ],
   "dependencies": {
     "@apollo/client": "^3.11.8",
     "graphql": "^16.9.0",
