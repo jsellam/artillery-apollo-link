@@ -35,6 +35,7 @@ Add the link in the apollo client constructor just before the httpLink
 | url         | true     | The GQL endpoint                                  |
 | headers     | false    | key / value object of headers                     |
 | thinkMapper | false    | (timeMs:number) => string. used to map time value |
+| disabled    | false    | default false, disable logs                       |
 
 `thinkMapper`can be used with a processor like this :
 

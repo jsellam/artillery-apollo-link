@@ -7,6 +7,7 @@ export type ArtilleryApolloLinkConfig = {
   url: string;
   headers?: Record<string, string>;
   thinkMapper?: (timeMs: number) => string;
+  disabled?: boolean;
 };
 
 export function createArtilleryApolloLink({
@@ -14,6 +15,7 @@ export function createArtilleryApolloLink({
   url,
   headers = undefined,
   thinkMapper = (time) => time + "ms",
+  disabled = false,
 }: ArtilleryApolloLinkConfig) {
   let lastQueryTime = 0;
   const flowList: any[] = [];
@@ -26,6 +28,9 @@ export function createArtilleryApolloLink({
   ];
 
   return new ApolloLink((operation, forward) => {
+    if (disabled) {
+      return forward(operation);
+    }
     const { query, variables, operationName } = operation;
 
     if (lastQueryTime > 0) {
